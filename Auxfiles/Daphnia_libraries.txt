@@ -1,0 +1,8 @@
+SRR18898027	Daphnia pulex	ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/027/SRR18898027/SRR18898027_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/027/SRR18898027/SRR18898027_2.fastq.gz	SAMN27744045
+SRR18898028	Daphnia pulex	ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/028/SRR18898028/SRR18898028_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/028/SRR18898028/SRR18898028_2.fastq.gz	SAMN27744045
+SRR18898030	Daphnia pulex	ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/030/SRR18898030/SRR18898030_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/030/SRR18898030/SRR18898030_2.fastq.gz	SAMN27744045
+SRR18898033	Daphnia pulex	ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/033/SRR18898033/SRR18898033_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/033/SRR18898033/SRR18898033_2.fastq.gz	SAMN27744044
+SRR18898034	Daphnia pulex	ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/034/SRR18898034/SRR18898034_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/034/SRR18898034/SRR18898034_2.fastq.gz	SAMN27744044
+SRR18898029	Daphnia pulex	ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/029/SRR18898029/SRR18898029_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/029/SRR18898029/SRR18898029_2.fastq.gz	SAMN27744045
+SRR18898031	Daphnia pulex	ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/031/SRR18898031/SRR18898031_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/031/SRR18898031/SRR18898031_2.fastq.gz	SAMN27744044
+SRR18898032	Daphnia pulex	ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/032/SRR18898032/SRR18898032_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR188/032/SRR18898032/SRR18898032_2.fastq.gz	SAMN27744044
