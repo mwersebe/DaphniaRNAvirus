@@ -66,7 +66,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR128/048/SRR12880548/SRR12880548_*.fas
 ## Step 3: Assemble the A. falcatus reads de novo. 
 
 ```
-## Here we need to convert the raw fastqs into a reference for mapping. Short reads will create a fragmented but still useful assembly. First we need to remove adaptor contamination and trim low quality reads. Next, I used the spades isolate assembly module to assemble the genome de novo. 
+## Here we need to convert the raw fastqs into a reference for mapping. Short reads will create a fragmented but still useful assembly. First, we need to remove adaptor contamination and trim low-quality reads. Next, I used the spades isolate assembly module to assemble the genome de novo. 
 
 cd References
 
@@ -79,7 +79,8 @@ singularity exec -H $(pwd) ../Containers/fastp.sif fastp \
 --out2  SRR12880548_trimmed_2.fastq.gz \
 -w 10 \
 --detect_adapter_for_pe \
---html SRR12880548_fastp.html
+--html SRR12880548_fastp.html \
+--json SRR12880548_fastp.json
 
 ## assemble reference; this may take some time
 
