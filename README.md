@@ -105,8 +105,13 @@ cd ../
 ```
 ## activate snakemake mamba/conda env
 
+pwd #(should be the working directory with the SRR fastqs with RNA seq data)
+
 mamba activate snakemake
 
+mkdir Data # Organize the directory 
+
+mv *.fastq.gz Data/.
 
 ```
 
