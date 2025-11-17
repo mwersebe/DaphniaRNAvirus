@@ -163,5 +163,5 @@ grep -A2 PDGDJCHL_27476 PROKKA_01082025.faa
 ## Step 9: Infer ML Tree from COBALT Alignment
 
 ```
-singularity exec -H $(pwd) ~Containers/iqtree3.sif iqtree3 -s Daphnia_pulex_virus_COBALT_alignment.fasta -B 1000 -T 6 --prefix Daphnia_pulex_virus
+singularity exec -H $(pwd) Containers/iqtree3.sif iqtree3 -s Daphnia_pulex_virus_COBALT_alignment.fasta -B 1000 -T 6 --prefix Daphnia_pulex_virus
 ```
