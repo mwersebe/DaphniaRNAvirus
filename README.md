@@ -21,6 +21,10 @@ singularity build prokka.sif docker://staphb/prokka:latest
 ## IQtree (v3) Phylogenetics:
 singularity build iqtree3.sif docker://staphb/iqtree3:latest
 
+## CD-hit (sequence clustering):
+
+singularity build cdhit.sif docker://biocontainers/cd-hit:v4.6.8-2-deb_cv1
+
 cd ../
 ```
 In addition to singularity you will need to install [mamba or conda](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html). I wrote the workflow using the workflow language Snakemake. It's best to install and manage snakemake via mamba or conda. 
@@ -114,5 +118,50 @@ mkdir Data # Organize the directory
 
 mv *.fastq.gz Data/.
 
+## Read Quality Filtering and Mapping: (this will take a while to run).
+
+snakemake -s alignment.smk -c all --configfile samples.yaml --use-singularity
+
+## De novo assembly: (also will take a while to run).
+
+snakemake -s meta_viral_assembly.sml -c all --configfile samples.yaml --use-singularity
+
+```
+## Step 6: Combine assembled unmapped RNA contigs; cluster by sequence identity; rename sequences
+
+```
+## Bring together all the assembled contigs:
+
+cat *_unmapped_asm/scaffolds.fasta > combine_asm.fasta
+
+## Use cd-hit to cluster by identity
+
+singularity exec -H $(pwd) Containers/cdhit.sif cd-hit -i combine_asm.fasta -o combine_asm_dedup.fasta -c 0.98
+
+## renames the fasta headers using an md5 hash.
+Rscript reheader_fasta.R
 ```
 
+## Step 7: Annotate retained RNA contigs using Prokka:
+
+```
+singularity exec -H $(pwd) Containers/prokka.sif prokka --outdir combine_asm_dedup_prokka --kingdom Viruses --metagenome --cpus 16 combine_asm_dedup_renmae_filter.fasta
+```
+
+## Step 8: Find RdRp sequences in results: 
+
+```
+cd combine_asm_dedup_prokka
+
+grep "RNA polymerase" PROKKA_01082025.tsv
+
+grep -A1 PDGDJCHL_17863 PROKKA_01082025.faa
+
+grep -A2 PDGDJCHL_27476 PROKKA_01082025.faa
+
+```
+## Step 9: Infer ML Tree from COBALT Alignment
+
+```
+singularity exec -H $(pwd) ~Containers/iqtree3.sif iqtree3 -s Daphnia_pulex_virus_COBALT_alignment.fasta -B 1000 -T 6 --prefix Daphnia_pulex_virus
+```
